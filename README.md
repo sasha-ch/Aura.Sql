@@ -1,5 +1,9 @@
 # Aura.Sql
 
+Fork from master branch to:
+- add https://github.com/auraphp/Aura.Sql/pull/92
+- bugfixes
+
 Provides an extension to the native [PDO](http://php.net/PDO) along with a
 profiler and connection locator. Because _ExtendedPdo_ is an extension of the
 native _PDO_, code already using the native _PDO_ or typehinted to the native
