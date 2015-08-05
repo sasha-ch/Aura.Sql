@@ -104,8 +104,16 @@ class Rebuilder
         if (array_key_exists(0, $values)) {
             array_unshift($values, null);
         }
-
-        $this->values = $values;
+        //prepare named values
+        $cvalues = [];
+        foreach($values as $k => $v){
+            if(is_string($k) && substr($k, 0, 1) == ':'){
+                $k = substr($k, 1);
+            }
+            $cvalues[$k] = $v;
+        }
+        $this->values = $cvalues;
+        
         $statement = $this->rebuildStatement($statement);
         return array($statement, $this->final_values);
     }
